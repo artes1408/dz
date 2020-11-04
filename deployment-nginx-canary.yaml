@@ -5,13 +5,13 @@ metadata:
   name: deployment-nginx
   labels:
     app: my-nginx
-    stage: canary
+    release: canary
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: my-nginx
-      stage: canary
+      release: canary
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -21,7 +21,7 @@ spec:
     metadata:
       labels:
         app: my-nginx
-        stage: canary
+        release: canary
     spec:
       containers:
       - image: nginx:latest

@@ -5,13 +5,13 @@ metadata:
   name: deployment-nginx
   labels:
     app: my-nginx
-    stage: prod
+    release: stable
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: my-nginx
-      stage: prod
+      release: stable
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -21,7 +21,7 @@ spec:
     metadata:
       labels:
         app: my-nginx
-        stage: prod
+        release: stable
     spec:
       containers:
       - image: nginx:latest
