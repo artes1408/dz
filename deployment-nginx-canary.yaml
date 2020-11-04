@@ -3,12 +3,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deployment-nginx
+  labels:
+    app: my-nginx
+    stage: canary
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: my-nginx
-      stage: canary
   strategy:
     rollingUpdate:
       maxSurge: 1
