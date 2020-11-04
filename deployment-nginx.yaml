@@ -3,7 +3,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deployment-nginx
-  stage: prod
+  labels:
+    app: my-nginx
+    stage: prod
 spec:
   replicas: 1
   selector:
