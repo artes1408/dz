@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment-nginx
+  name: deployment-nginx-canary
   labels:
     app: my-nginx
     release: canary
