@@ -11,6 +11,7 @@ spec:
   selector:
     matchLabels:
       app: my-nginx
+      stage: prod
   strategy:
     rollingUpdate:
       maxSurge: 1
