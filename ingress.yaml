@@ -3,16 +3,25 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-nginx
-annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
   rules:
   - host: nginx.cluster.local
     http:
       paths:
       - path: /
+        pathType: Prefix
         backend:
           service:
             name: service-nginx
             port:
-              number: 80
+              number: 8000
+  - host: nginx.cluster.local
+    http:
+      paths:
+      - path: /canary
+        pathType: Prefix
+        backend:
+          service:
+            name: service-nginx-canary
+            port:
+              number: 8000
