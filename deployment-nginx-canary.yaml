@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: my-nginx
-      stage: prod
+      stage: canary
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -18,7 +18,7 @@ spec:
     metadata:
       labels:
         app: my-nginx
-        stage: prod
+        stage: canary
     spec:
       containers:
       - image: nginx:latest
@@ -48,4 +48,4 @@ spec:
       volumes:
       - name: config
         configMap:
-          name: configmap-nginx
+          name: configmap-nginx-canary
