@@ -6,11 +6,11 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  #defaultBackend:
-  #  service:
-  #    name: nginx-service-stable
-  #    port:
-  #      number: 80
+  defaultBackend:
+    service:
+      name: nginx-service-stable
+      port:
+        number: 80
   rules:
   - http:
       paths:
