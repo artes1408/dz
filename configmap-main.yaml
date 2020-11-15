@@ -12,6 +12,6 @@ data:
         default_type text/plain;
 
         location / {
-            return 200 '$hostname\nThis is main nginx deployment\n';
+            return 200 '$hostname\nThis is PROD nginx deployment\n';
         }
     }
